@@ -24,3 +24,7 @@
     background-color: white;    
     flex: auto;
 }
+
+.colored {
+    background-color: rgb(185, 185, 185)
+}

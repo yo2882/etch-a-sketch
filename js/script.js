@@ -25,3 +25,14 @@ function disablePen(){
 
 body.addEventListener("mousedown",enablePen);
 body.addEventListener("mouseup",disablePen);
+
+function changeColor(){
+    if(penStatus){
+        this.classList.add("colored");
+    }
+}
+
+const squareAll = document.querySelectorAll(".square");
+squareAll.forEach(square => {
+    square.addEventListener("mouseover",changeColor);
+});
