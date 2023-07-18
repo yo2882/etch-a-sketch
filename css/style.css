@@ -2,4 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(241, 232, 221);
+}
+
+.square-grid {
+    width: 600px;
+    height: 600px;
+}
+
+.row-flex {
+    display: flex;
+    flex: auto;
+}
+
+.column-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.square {
+    background-color: white;    
+    flex: auto;
 }
