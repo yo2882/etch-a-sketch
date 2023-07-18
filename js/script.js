@@ -9,3 +9,19 @@ for (let i = 0; i < 16; i++) {
     }
     squareGrid.appendChild(squareSubGrid);
 }
+
+const body = document.querySelector("body");
+let penStatus = false;
+
+function enablePen(){
+    penStatus = true;
+    event.preventDefault();
+}
+
+function disablePen(){
+    penStatus = false;
+    event.preventDefault();
+}
+
+body.addEventListener("mousedown",enablePen);
+body.addEventListener("mouseup",disablePen);
