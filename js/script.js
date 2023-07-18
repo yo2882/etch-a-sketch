@@ -4,12 +4,11 @@ const squareGrid = document.querySelector(".square-grid");
 
 function removeAllChild (parent){
     while (parent.firstChild) {
-        parent.remove(parent.firstChild);
+        parent.removeChild(parent.firstChild);
     }
 }
 
 function generateGrid() {
-    removeAllChild (squareGrid);
     for (let i = 0; i < gridSize; i++) {
         const squareSubGrid = document.createElement("div");
         squareSubGrid.classList.add("row-flex");
@@ -20,8 +19,10 @@ function generateGrid() {
         }
         squareGrid.appendChild(squareSubGrid);
     }
+    squareEventListener();
 }
 
+//run starting function
 generateGrid();
 
 //track status of mousedown and mouseup in penStatus
@@ -46,18 +47,19 @@ function changeColor(){
     }
 }
 
-const squareAll = document.querySelectorAll(".square");
-squareAll.forEach(square => {
-    square.addEventListener("mouseover",changeColor);
-});
+function squareEventListener() {
+    const squareAll = document.querySelectorAll(".square");
+    squareAll.forEach(square => {
+        square.addEventListener("mouseover",changeColor);
+    });
+}
 
 //Reset button
 const resetButton = document.querySelector(".reset");
 
 function reset(){
-    squareAll.forEach(square => {
-        square.classList.remove("colored");
-    });
+    removeAllChild (squareGrid);
+    generateGrid();
 }
 
 resetButton.addEventListener("click",reset)
@@ -68,4 +70,5 @@ const sliderValueDisplay = document.querySelector(".grid-slider p");
 
 slider.addEventListener("input",() => {
     sliderValueDisplay.textContent = slider.value;
+    gridSize = slider.value;
 })
