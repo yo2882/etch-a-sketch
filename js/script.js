@@ -98,6 +98,7 @@ function squareEventListener() {
     const squareAll = document.querySelectorAll(".square");
     squareAll.forEach(square => {
         square.addEventListener("mouseover",changeColor);
+        square.addEventListener("click",changeColor);
     });
 }
 
