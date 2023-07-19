@@ -69,6 +69,6 @@ const slider = document.querySelector(".grid-slider input");
 const sliderValueDisplay = document.querySelector(".grid-slider p");
 
 slider.addEventListener("input",() => {
-    sliderValueDisplay.textContent = slider.value;
+    sliderValueDisplay.textContent = `${slider.value} x ${slider.value}`;
     gridSize = slider.value;
 })
